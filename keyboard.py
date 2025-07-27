@@ -1,4 +1,5 @@
-from aiogram.types import InlineKeyboardButton, InlineKeyboardBuilder
+from aiogram.types import InlineKeyboardButton
+from aiogram.utils.keyboard import InlineKeyboardBuilder
 
 # Асинхронная функция для создания Inline-клавиатуры с кнопками "Привет" и "Пока"
 async def start_keyboard():
