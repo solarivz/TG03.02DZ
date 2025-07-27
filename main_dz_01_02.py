@@ -1,5 +1,5 @@
 import asyncio
-import keyboard_01 as kb  # Импорт модуля keyboards под псевдонимом kb
+import keyboard_dz_01_02 as kb  # Импорт модуля keyboards под псевдонимом kb
 from aiogram import Bot, Dispatcher, F
 from aiogram.filters import CommandStart, Command
 from aiogram.types import Message, CallbackQuery
