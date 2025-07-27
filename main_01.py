@@ -1,7 +1,7 @@
 import asyncio
 import keyboard_01 as kb  # Импорт модуля keyboards под псевдонимом kb
 from aiogram import Bot, Dispatcher, F
-from aiogram.filters import CommandStart
+from aiogram.filters import CommandStart, Command
 from aiogram.types import Message, CallbackQuery
 from config import TOKEN
 
@@ -16,6 +16,12 @@ dp = Dispatcher()
 async def start(message: Message):
     # Отправляем приветственное сообщение и прикрепляем клавиатуру
     await message.answer("Выберите действие:", reply_markup=await kb.start_keyboard())
+
+# Хэндлер для команды /links — отправка сообщения с клавиатурой с URL-ссылками
+@dp.message(Command("links"))
+async def links(message: Message):
+    # Отправляем сообщение с предложением выбора ссылок и прикрепляем клавиатуру
+    await message.answer("Выберите категорию:", reply_markup=await kb.links_keyboard())
 
 # Хэндлер для обработки нажатия на кнопку "Привет"
 @dp.callback_query(F.data == "say_hello")
