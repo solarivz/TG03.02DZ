@@ -11,3 +11,16 @@ async def start_keyboard():
     keyboard.add(InlineKeyboardButton(text="Пока", callback_data="say_goodbye"))
     # Возвращаем клавиатуру с одной кнопкой в ряд
     return keyboard.as_markup()
+
+# Асинхронная функция для создания Inline-клавиатуры с URL-ссылками
+async def links_keyboard():
+    # Инициализируем билдер для создания Inline-клавиатуры
+    keyboard = InlineKeyboardBuilder()
+    # Добавляем кнопку "Новости" с ссылкой на сайт новостей
+    keyboard.add(InlineKeyboardButton(text="Новости", url="https://news.google.com"))
+    # Добавляем кнопку "Музыка" с ссылкой на музыкальный сервис
+    keyboard.add(InlineKeyboardButton(text="Музыка", url="https://open.spotify.com"))
+    # Добавляем кнопку "Видео" с ссылкой на видеоплатформу
+    keyboard.add(InlineKeyboardButton(text="Видео", url="https://www.youtube.com"))
+    # Возвращаем клавиатуру с одной кнопкой в ряд
+    return keyboard.as_markup()
